@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- &&&&& Screen dimens for hdpi screens &&&&& -->
+
+    <dimen name="text_compound_drawable">10sp</dimen>
+    <dimen name="text_Medium">16sp</dimen>
+    <dimen name="text_Large">18sp</dimen>
+    <dimen name="text_Xlarge">20sp</dimen>
+    <dimen name="text_Small_low">12sp</dimen>
+    <dimen name="text_10sp">10sp</dimen>
+    <dimen name="text_Small">14sp</dimen>
+    <dimen name="signup_edt_width">180dp</dimen>
+    <dimen name="spacing_small_low">5dp</dimen>
+    <dimen name="spacing_small">10dp</dimen>
+    <dimen name="spacing_small_extra">15dp</dimen>
+    <dimen name="spacing_medium">20dp</dimen>
+    <dimen name="spacing_medium_extra">25dp</dimen>
+    <dimen name="spacing_large">30dp</dimen>
+    <dimen name="spacing_large_extra">35dp</dimen>
+    <dimen name="spacing_xlarge">40dp</dimen>
+    <dimen name="spacing_xxlarge">50dp</dimen>
+    <dimen name="spacing_xxxlarge">60dp</dimen>
+    <dimen name="spacing_btn_pick_margin">48.65dip</dimen>
+    <dimen name="spacing_xxxxlarge70">70dp</dimen>
+    <dimen name="spacing_xxxxxlarge80">80dp</dimen>
+    <dimen name="spacing_xxxxxlarge90">90dp</dimen>
+    <dimen name="spacing_xxxxxxlarge100">101.25dip</dimen>
+
+    <!-- QuickCardDialog subview -->
+
+    <dimen name="viewpager_imageWidth_height">200dp</dimen>
+    <dimen name="viewpager_circleindicator_radius">4.5dp</dimen>
+
+</resources>

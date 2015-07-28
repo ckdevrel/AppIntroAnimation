@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- &&&&& Screen dimens for Large mdpi screens &&&&& -->
+<resources>
+
+    <dimen name="text_compound_drawable">16sp</dimen>
+    <dimen name="text_Medium">26sp</dimen>
+    <dimen name="text_Large">30sp</dimen>
+    <dimen name="text_Xlarge">33sp</dimen>
+    <dimen name="text_Small_low">20sp</dimen>
+    <dimen name="text_10sp">16sp</dimen>
+    <dimen name="text_Small">23sp</dimen>
+    <dimen name="signup_edt_width">300dp</dimen>
+    <dimen name="spacing_small_low">8dp</dimen>
+    <dimen name="spacing_small">16dp</dimen>
+    <dimen name="spacing_small_extra">25dp</dimen>
+    <dimen name="spacing_medium">33dp</dimen>
+    <dimen name="spacing_medium_extra">41dp</dimen>
+    <dimen name="spacing_large">50dp</dimen>
+    <dimen name="spacing_large_extra">58dp</dimen>
+    <dimen name="spacing_xlarge">66.5dip</dimen>
+    <dimen name="spacing_xxlarge">83dp</dimen>
+    <dimen name="spacing_xxxlarge">100dp</dimen>
+    <dimen name="spacing_btn_pick_margin">81dip</dimen>
+    <dimen name="spacing_xxxxlarge70">116.6dip</dimen>
+    <dimen name="spacing_xxxxxlarge80">133.3dip</dimen>
+    <dimen name="spacing_xxxxxlarge90">150dp</dimen>
+    <dimen name="spacing_xxxxxxlarge100">168.75dip</dimen>
+
+
+</resources>

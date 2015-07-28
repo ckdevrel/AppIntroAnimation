@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">AppIntroAnimation</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+
+    <array name="landing_bg">
+        <item>@color/bg_1</item>
+        <item>@color/bg_2</item>
+        <item>@color/bg_3</item>
+        <item>@color/bg_4</item>
+
+    </array>
+
+
+</resources>
