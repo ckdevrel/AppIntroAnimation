@@ -19,6 +19,9 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity{
 
+    private static final String SAVING_STATE_SLIDER_ANIMATION = "SliderAnimationSavingState";
+    private boolean isSliderAnimation = true;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -61,12 +64,15 @@ public class MainActivity extends AppCompatActivity{
 
             }
 
-            public void onPageSelected(final int position) {
+            public void onPageSelected(int position) {
+
+                findViewById(R.id.skip).setVisibility(position == 0 ? View.GONE : View.VISIBLE);
             }
 
             public void onPageScrollStateChanged(int state) {
             }
         });
+
 
     }
 
@@ -182,9 +188,9 @@ public class MainActivity extends AppCompatActivity{
      * @param view - view to which alpha to be applied.
      * @param alpha - alpha value.
      */
-    private static void setAlpha(View view, float alpha) {
+    private void setAlpha(View view, float alpha) {
 
-        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB && ! isSliderAnimation) {
             view.setAlpha(alpha);
         }
     }
@@ -194,10 +200,28 @@ public class MainActivity extends AppCompatActivity{
      * @param view - view to which alpha to be applied.
      * @param translationX - translationX value.
      */
-    private static void setTranslationX(View view, float translationX) {
-        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
+    private void setTranslationX(View view, float translationX) {
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB && ! isSliderAnimation) {
             view.setTranslationX(translationX);
         }
+    }
+
+    public void onSaveInstanceState(Bundle outstate) {
+
+        if(outstate != null) {
+            outstate.putBoolean(SAVING_STATE_SLIDER_ANIMATION,isSliderAnimation);
+        }
+
+        super.onSaveInstanceState(outstate);
+    }
+
+    public void onRestoreInstanceState(Bundle inState) {
+
+        if(inState != null) {
+            isSliderAnimation = inState.getBoolean(SAVING_STATE_SLIDER_ANIMATION,false);
+        }
+        super.onRestoreInstanceState(inState);
+
     }
 
 
