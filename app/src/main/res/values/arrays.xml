@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <array name="landing_bg">
+        <item>@color/light_green</item>
+        <item>@color/light_purple</item>
+        <item>@color/light_orange</item>
+        <item>@color/light_cyan</item>
+
+    </array>
+
+    <array name="icons">
+        <item>@drawable/email</item>
+        <item>@drawable/calendar</item>
+        <item>@drawable/shopping</item>
+        <item>@drawable/socialnetwork</item>
+
+    </array>
+
+    <string-array name="titles" >
+
+        <item>@string/email</item>
+        <item>@string/calender</item>
+        <item>@string/shopping</item>
+        <item>@string/social_network</item>
+
+    </string-array>
+
+    <string-array name="hints" >
+
+        <item>@string/email_hint</item>
+        <item>@string/calender_hint</item>
+        <item>@string/shopping_hint</item>
+        <item>@string/social_network_hint</item>
+
+    </string-array>
+</resources>

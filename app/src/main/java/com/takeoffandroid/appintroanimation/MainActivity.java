@@ -1,32 +1,17 @@
 package com.takeoffandroid.appintroanimation;
 
-import android.animation.ArgbEvaluator;
-import android.graphics.Color;
-import android.support.v7.app.ActionBarActivity;
-import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.view.Menu;
-import android.view.MenuItem;
-
-
-
-import java.beans.PropertyChangeEvent;
-import java.beans.PropertyChangeListener;
-
-import android.content.Context;
+import android.app.Activity;
 import android.content.Intent;
-import android.graphics.Typeface;
-import android.location.Location;
+import android.graphics.drawable.Drawable;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.view.LayoutInflater;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -34,16 +19,8 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity{
 
-    ArgbEvaluator argbEvaluator = new ArgbEvaluator();
-
-    private ViewPager mViewPager;
-    private CirclePageIndicator mIndicator;
-    private Typeface mFontDark,mFontLight;
-    private PagerAdapter adapter;
-    private int[] imgSlide,colorBg;
-    private String[] txtTitle, txtHint;
-    private RelativeLayout landingBackground;
-
+    private static final String SAVING_STATE_SLIDER_ANIMATION = "SliderAnimationSavingState";
+    private boolean isSliderAnimation = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,115 +30,105 @@ public class MainActivity extends AppCompatActivity{
         window.setFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS, WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
         setContentView(R.layout.activity_main);
 
-        findViews();
+        ViewPager viewPager = (ViewPager) findViewById(R.id.pager);
 
-        colorBg = getResources().getIntArray(R.array.landing_bg);
+        viewPager.setAdapter(new ViewPagerAdapter(R.array.icons, R.array.titles, R.array.hints));
 
+        CirclePageIndicator mIndicator  = (CirclePageIndicator) findViewById(R.id.indicator);
+        mIndicator.setViewPager(viewPager);
 
-        imgSlide = new int[] {R.drawable.email,
-                R.drawable.calendar,  R.drawable.shopping, R.drawable.socialnetwork};
-
-        txtHint = new String[] {"A system for sending and receiving messages electronically over a computer network.","Note all your special ocassions in calendar and keep them in your finger tips","Shop and get offers, promo codes and discounts on your future purchase.","Stay connected with your friends, colleagues and family globally"};
-        txtTitle = new String[] {"EMAIL","CALENDAR","SHOPPING","SOCIAL NETWORK"};
-
-        adapter = new ViewPagerAdapter(MainActivity.this,imgSlide, txtTitle, txtHint);
-        mViewPager.setAdapter(adapter);
-        mIndicator = (CirclePageIndicator) findViewById(R.id.indicator);
-        mIndicator.setViewPager(mViewPager);
-
-        mViewPager.setPageTransformer(true, new CustomPageTransformer());
-
-        mViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+        TextView skipView = (TextView) findViewById(R.id.skip);
+        skipView.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onPageScrolled(final int position, float positionOffset, int positionOffsetPixels) {
-
-                if (position < (adapter.getCount() - 1) && position < (colorBg.length - 1)) {
-
-                    landingBackground.setBackgroundColor((Integer) argbEvaluator.evaluate(positionOffset, colorBg[position], colorBg[position + 1]));
-
-                } else {
-
-                    // the last page color
-                    landingBackground.setBackgroundColor(colorBg[colorBg.length - 1]);
-
-                }
-
-
-            }
-
-            @Override
-            public void onPageSelected(final int position) {
-
-
-            }
-
-            @Override
-            public void onPageScrollStateChanged(int state) {
-
+            public void onClick(View v) {
+                onSkip();
             }
         });
 
-    }
+        viewPager.setPageTransformer(true, new CustomPageTransformer());
 
-    private void findViews() {
-        landingBackground = (RelativeLayout)findViewById(R.id.landing_backgrond);
-        mViewPager = (ViewPager)findViewById(R.id.pager);
-        mIndicator = (CirclePageIndicator)findViewById(R.id.indicator);
+        viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(final int position, float positionOffset, int positionOffsetPixels) {
+
+                View landingBGView = findViewById(R.id.landing_backgrond);
+                int colorBg[] = getResources().getIntArray(R.array.landing_bg);
+
+
+                ColorShades shades = new ColorShades();
+                shades.setFromColor(colorBg[position % colorBg.length])
+                        .setToColor(colorBg[(position + 1) % colorBg.length])
+                        .setShade(positionOffset);
+
+                landingBGView.setBackgroundColor(shades.generate());
+
+            }
+
+            public void onPageSelected(int position) {
+
+                findViewById(R.id.skip).setVisibility(position == 0 ? View.GONE : View.VISIBLE);
+            }
+
+            public void onPageScrollStateChanged(int state) {
+            }
+        });
+
+
     }
 
     public class ViewPagerAdapter extends PagerAdapter {
-        // Declare Variables
-        private Context context;
 
-        private int[] imgSlide;
-        private String[] txtTitle, txtHint;
-        private LayoutInflater inflater;
+        private int iconResId, titleArrayResId, hintArrayResId;
 
-        public ViewPagerAdapter(Context context, int[] imgSlide, String[] txtTitle, String[] txtHint) {
-            this.context = context;
+        public ViewPagerAdapter(int iconResId, int titleArrayResId, int hintArrayResId) {
 
-            this.imgSlide = imgSlide;
-            this.txtTitle = txtTitle;
-            this.txtHint = txtHint;
+            this.iconResId = iconResId;
+            this.titleArrayResId = titleArrayResId;
+            this.hintArrayResId = hintArrayResId;
         }
 
         @Override
         public int getCount() {
-            return imgSlide.length;
+            return getResources().getIntArray(iconResId).length;
         }
 
         @Override
         public boolean isViewFromObject(View view, Object object) {
-            return view == ((RelativeLayout) object);
+            return view == object;
         }
 
         @Override
         public Object instantiateItem(ViewGroup container, int position) {
 
-            ImageView imgflag;
-            TextView landtxtTitle, landtxtHint;
-            inflater = (LayoutInflater) context
-                    .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            View itemView = inflater.inflate(R.layout.viewpager_item, container,
-                    false);
-            imgflag = (ImageView) itemView.findViewById(R.id.landing_img_slide);
-            landtxtTitle = (TextView)itemView.findViewById(R.id.landing_txt_title);
-            landtxtHint = (TextView)itemView.findViewById(R.id.landing_txt_hint);
-            imgflag.setImageResource(imgSlide[position]);
-            landtxtTitle.setTypeface(mFontDark);
-            landtxtHint.setTypeface(mFontLight);
-            landtxtTitle.setText(txtTitle[position]);
-            landtxtHint.setText(txtHint[position]);
-            ((ViewPager) container).addView(itemView);
+            Drawable icon = getResources().obtainTypedArray(iconResId).getDrawable(position);
+            String title = getResources().getStringArray(titleArrayResId)[position];
+            String hint = getResources().getStringArray(hintArrayResId)[position];
+
+
+            View itemView = getLayoutInflater().inflate(R.layout.viewpager_item, container, false);
+
+
+            ImageView iconView = (ImageView) itemView.findViewById(R.id.landing_img_slide);
+            TextView titleView = (TextView)itemView.findViewById(R.id.landing_txt_title);
+            TextView hintView = (TextView)itemView.findViewById(R.id.landing_txt_hint);
+
+
+            iconView.setImageDrawable(icon);
+            titleView.setText(title);
+            hintView.setText(hint);
+
+            container.addView(itemView);
+
             return itemView;
         }
 
         @Override
         public void destroyItem(ViewGroup container, int position, Object object) {
-            ((ViewPager) container).removeView((RelativeLayout) object);
+            container.removeView((RelativeLayout) object);
 
         }
     }
+
     public class CustomPageTransformer implements ViewPager.PageTransformer {
 
 
@@ -178,71 +145,94 @@ public class MainActivity extends AppCompatActivity{
                 // This page is moving out to the left
 
                 // Counteract the default swipe
-                view.setTranslationX(pageWidth * -position);
+                setTranslationX(view,pageWidth * -position);
                 if (contentView != null) {
                     // But swipe the contentView
-                    contentView.setTranslationX(pageWidth * position);
-                    txt_title.setTranslationX(pageWidth * position);
+                    setTranslationX(contentView,pageWidth * position);
+                    setTranslationX(txt_title,pageWidth * position);
 
-                    contentView.setAlpha(1 + position);
-                    txt_title.setAlpha(1 + position);
+                    setAlpha(contentView,1 + position);
+                    setAlpha(txt_title,1 + position);
                 }
 
                 if (imageView != null) {
                     // Fade the image in
-                    imageView.setAlpha(1 + position);
+                    setAlpha(imageView,1 + position);
                 }
 
             } else if (position <= 1) { // (0,1]
                 // This page is moving in from the right
 
                 // Counteract the default swipe
-                view.setTranslationX(pageWidth * -position);
+                setTranslationX(view, pageWidth * -position);
                 if (contentView != null) {
                     // But swipe the contentView
-                    contentView.setTranslationX(pageWidth * position);
-                    txt_title.setTranslationX(pageWidth * position);
-                    contentView.setAlpha(1 - position);
-                    txt_title.setAlpha(1 - position);
+                    setTranslationX(contentView,pageWidth * position);
+                    setTranslationX(txt_title,pageWidth * position);
+
+                    setAlpha(contentView, 1 - position);
+                    setAlpha(txt_title, 1 - position);
 
                 }
                 if (imageView != null) {
                     // Fade the image out
-                    imageView.setAlpha(1 - position);
+                    setAlpha(imageView,1 - position);
                 }
 
             }
         }
     }
 
+    /**
+     * Sets the alpha for the view. The alpha will be applied only if the running android device OS is greater than honeycomb.
+     * @param view - view to which alpha to be applied.
+     * @param alpha - alpha value.
+     */
+    private void setAlpha(View view, float alpha) {
 
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB && ! isSliderAnimation) {
+            view.setAlpha(alpha);
+        }
+    }
 
-        super.onActivityResult(requestCode, resultCode, data);
+    /**
+     * Sets the translationX for the view. The translation value will be applied only if the running android device OS is greater than honeycomb.
+     * @param view - view to which alpha to be applied.
+     * @param translationX - translationX value.
+     */
+    private void setTranslationX(View view, float translationX) {
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB && ! isSliderAnimation) {
+            view.setTranslationX(translationX);
+        }
+    }
 
-        if (requestCode == 0) {
-            if (resultCode == RESULT_OK) {
-                finish();
-            }
+    public void onSaveInstanceState(Bundle outstate) {
+
+        if(outstate != null) {
+            outstate.putBoolean(SAVING_STATE_SLIDER_ANIMATION,isSliderAnimation);
         }
 
+        super.onSaveInstanceState(outstate);
+    }
+
+    public void onRestoreInstanceState(Bundle inState) {
+
+        if(inState != null) {
+            isSliderAnimation = inState.getBoolean(SAVING_STATE_SLIDER_ANIMATION,false);
+        }
+        super.onRestoreInstanceState(inState);
+
     }
 
 
+    private void onSkip() {
 
-    @Override
-    public void onResume(){
-        super.onResume();
+        Class<Activity> homeScreenActivityClazz = null; // TODO : Refer you home screen activity class here to start that activity on skip button tapped.
+
+        if(homeScreenActivityClazz != null) {
+            Intent intent = new Intent(this, homeScreenActivityClazz);
+            startActivity(intent);
+            finish();
+        }
     }
-
-    @Override
-    public void onPause(){
-        super.onPause();
-    }
-
-
-
-
-}// End of Activity
-
+}
