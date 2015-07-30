@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <color name="bg_1">#3eb74e</color>
-    <color name="bg_2">#8c61b3</color>
-    <color name="bg_3">#ffb500</color>
-    <color name="bg_4">#00BCD4</color>
+    <color name="light_green">#3eb74e</color>
+    <color name="light_purple">#8c61b3</color>
+    <color name="light_orange">#ffb500</color>
+    <color name="light_cyan">#00BCD4</color>
 
 
 </resources>

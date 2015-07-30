@@ -17,9 +17,6 @@
 package com.takeoffandroid.appintroanimation;
 
 
-import static android.graphics.Paint.ANTI_ALIAS_FLAG;
-import static android.widget.LinearLayout.HORIZONTAL;
-import static android.widget.LinearLayout.VERTICAL;
 import android.content.Context;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
@@ -37,12 +34,17 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewConfiguration;
 
+import static android.graphics.Paint.ANTI_ALIAS_FLAG;
+import static android.widget.LinearLayout.HORIZONTAL;
+import static android.widget.LinearLayout.VERTICAL;
+
 
 /**
  * Draws circles (one for each view). The current view position is filled and
  * others are only stroked.
  */
 public class CirclePageIndicator extends View implements PageIndicator {
+
     private static final int INVALID_POINTER = -1;
 
     private float mRadius;
@@ -553,4 +555,43 @@ public class CirclePageIndicator extends View implements PageIndicator {
             }
         };
     }
+}
+
+interface PageIndicator extends ViewPager.OnPageChangeListener {
+    /**
+     * Bind the indicator to a ViewPager.
+     *
+     * @param view
+     */
+    void setViewPager(ViewPager view);
+
+    /**
+     * Bind the indicator to a ViewPager.
+     *
+     * @param view
+     * @param initialPosition
+     */
+    void setViewPager(ViewPager view, int initialPosition);
+
+    /**
+     * <p>Set the current page of both the ViewPager and indicator.</p>
+     *
+     * <p>This <strong>must</strong> be used if you need to set the page before
+     * the views are drawn on screen (e.g., default start page).</p>
+     *
+     * @param item
+     */
+    void setCurrentItem(int item);
+
+    /**
+     * Set a page change listener which will receive forwarded events.
+     *
+     * @param listener
+     */
+    void setOnPageChangeListener(ViewPager.OnPageChangeListener listener);
+
+    /**
+     * Notify the indicator that the fragment list has changed.
+     */
+    void notifyDataSetChanged();
 }

@@ -4,13 +4,16 @@
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
 
-    <array name="landing_bg">
-        <item>@color/bg_1</item>
-        <item>@color/bg_2</item>
-        <item>@color/bg_3</item>
-        <item>@color/bg_4</item>
+    <string name="email">EMAIL</string>
+    <string name="calender">CALENDAR</string>
+    <string name="shopping">SHOPPING</string>
+    <string name="social_network">SOCIAL NETWORK</string>
 
-    </array>
 
+    <string name="email_hint">A system for sending and receiving messages electronically over a computer network.</string>
+    <string name="calender_hint">Note all your special occasions in calendar and keep them in your finger tips</string>
+    <string name="shopping_hint">Shop and get offers, promo codes and discounts on your future purchase.</string>
+    <string name="social_network_hint">Stay connected with your friends, colleagues and family globally</string>
+    <string name="skip">SKIP</string>
 
 </resources>
