@@ -11,3 +11,4 @@ How to use
 > **STEP 2:** Drop all your images that are to be used for making AppIntro's into drawable folders. To get exact output for multiple resolution and sizes, add scaled images seperately for drawable-xxxhdpi, drawable-xxhdpi, drawable-xhdpi, drawable-hdpi, drawable-mdpi,etc.
 
 
+![ezgif com-video-to-gif](https://cloud.githubusercontent.com/assets/11768239/9000167/f5da53b2-3760-11e5-91cd-b7f116488861.gif)
