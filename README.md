@@ -48,6 +48,7 @@ How to use
 
 Here I have added 4 slides with images, titles and title hints. You can update your png's, text content in above arrays.xml as per your project need and requirement.
 
+
 > **Note:** The array count of images, titles and title hints should be of same count to avoid IndexBoundException.
 
 
@@ -61,7 +62,7 @@ Customization
 
 To customize pager attributes like indicator stroke size, stroke color, solid color, solid size, solid color, selected color and unselected color, please open `vpi_defaults.xml` and customize according to your wish.
 
-Following are the attributes that I have used in my project demo, you also customize your own.
+Following are the attributes that I have used in my project demo, you can also customize your own.
 
     <dimen name="default_line_indicator_line_width">12dp</dimen>
     <dimen name="default_line_indicator_gap_width">4dp</dimen>
