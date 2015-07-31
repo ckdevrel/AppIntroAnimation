@@ -85,8 +85,8 @@ Following are the attributes that I have used in my project demo, you can also c
 
 The app which inspired me to create this repos
 
-> - To create background color transformation animation used in [Google Inbox][1] intro screen.
-> - To create Image translation animation used in [Duolingo][2] intro screen.
+> - Background color transformation animation used in [Google Inbox][1] intro screen.
+> - Image translation animation used in [Duolingo][2] intro screen.
 
   [1]: https://play.google.com/store/apps/details?id=com.google.android.apps.inbox
   [2]: https://play.google.com/store/apps/details?id=com.duolingo
