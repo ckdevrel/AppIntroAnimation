@@ -15,39 +15,12 @@
 -->
 
 <resources>
-    <bool name="default_circle_indicator_centered">true</bool>
-    <color name="default_circle_indicator_fill_color">#FFFFFFFF</color>
-    <color name="default_circle_indicator_page_color">#40FFFFFF</color>
-    <integer name="default_circle_indicator_orientation">0</integer>
-    <dimen name="default_circle_indicator_radius">3dp</dimen>
-    <bool name="default_circle_indicator_snap">false</bool>
-    <color name="default_circle_indicator_stroke_color">#40FFFFFF</color>
-    <dimen name="default_circle_indicator_stroke_width">1dp</dimen>
-
-    <dimen name="default_line_indicator_line_width">12dp</dimen>
-    <dimen name="default_line_indicator_gap_width">4dp</dimen>
-    <dimen name="default_line_indicator_stroke_width">3dp</dimen>
-    <color name="default_line_indicator_selected_color">#FF33B5E5</color>
-    <color name="default_line_indicator_unselected_color">#FFBBBBBB</color>
-    <bool name="default_line_indicator_centered">true</bool>
-
-    <dimen name="default_title_indicator_clip_padding">4dp</dimen>
-    <color name="default_title_indicator_footer_color">#FF33B5E5</color>
-    <dimen name="default_title_indicator_footer_line_height">2dp</dimen>
-    <integer name="default_title_indicator_footer_indicator_style">2</integer>
-    <dimen name="default_title_indicator_footer_indicator_height">4dp</dimen>
-    <dimen name="default_title_indicator_footer_indicator_underline_padding">20dp</dimen>
-    <dimen name="default_title_indicator_footer_padding">7dp</dimen>
-    <integer name="default_title_indicator_line_position">0</integer>
-    <color name="default_title_indicator_selected_color">#FFFFFFFF</color>
-    <bool name="default_title_indicator_selected_bold">true</bool>
-    <color name="default_title_indicator_text_color">#BBFFFFFF</color>
-    <dimen name="default_title_indicator_text_size">15dp</dimen>
-    <dimen name="default_title_indicator_title_padding">5dp</dimen>
-    <dimen name="default_title_indicator_top_padding">7dp</dimen>
-
-    <bool name="default_underline_indicator_fades">true</bool>
-    <integer name="default_underline_indicator_fade_delay">300</integer>
-    <integer name="default_underline_indicator_fade_length">400</integer>
-    <color name="default_underline_indicator_selected_color">#FF33B5E5</color>
+        <bool name="default_circle_indicator_centered">true</bool> 
+        <color name="default_circle_indicator_fill_color">#FFFFFFFF</color>  <!--change fill color-->
+        <color name="default_circle_indicator_page_color">#40FFFFFF</color>  <!--change indicator un selected fill color-->
+        <integer name="default_circle_indicator_orientation">0</integer> 
+        <dimen name="default_circle_indicator_radius">3dp</dimen> <!--change radius of the circle-->
+        <bool name="default_circle_indicator_snap">false</bool> 
+        <color name="default_circle_indicator_stroke_color">#40FFFFFF</color> <!--change stroke color-->
+        <dimen name="default_circle_indicator_stroke_width">1dp</dimen> <!--change stroke width-->
 </resources>
