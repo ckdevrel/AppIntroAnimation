@@ -6,11 +6,16 @@ AppIntroAnimation is a set of code snippets to make cool intro screen for your a
 
 ![appintro1](https://cloud.githubusercontent.com/assets/11768239/9006453/ed88bc78-37a4-11e5-9052-b8bc98678906.gif)
 
+> **Tip:** Enable `private boolean isSliderAnimation = false;` in `MainActivity.java` to apply this Image translation and background pager transformation animation.
+
 
 **Demo II:**
 
 
 ![appintro2](https://cloud.githubusercontent.com/assets/11768239/9006455/f2d9f3a4-37a4-11e5-8e91-092e77ca1da7.gif)
+
+
+> **Tip:** Enable `private boolean isSliderAnimation = true;` in `MainActivity.java` to apply this background pager transformation animation without Image translation effect..
 
 
 How to use
