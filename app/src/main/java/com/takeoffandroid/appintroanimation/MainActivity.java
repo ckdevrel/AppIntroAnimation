@@ -20,7 +20,7 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity{
 
     private static final String SAVING_STATE_SLIDER_ANIMATION = "SliderAnimationSavingState";
-    private boolean isSliderAnimation = true;
+    private boolean isSliderAnimation = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,13 +37,7 @@ public class MainActivity extends AppCompatActivity{
         CirclePageIndicator mIndicator  = (CirclePageIndicator) findViewById(R.id.indicator);
         mIndicator.setViewPager(viewPager);
 
-        TextView skipView = (TextView) findViewById(R.id.skip);
-        skipView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                onSkip();
-            }
-        });
+
 
         viewPager.setPageTransformer(true, new CustomPageTransformer());
 
@@ -66,7 +60,6 @@ public class MainActivity extends AppCompatActivity{
 
             public void onPageSelected(int position) {
 
-                findViewById(R.id.skip).setVisibility(position == 0 ? View.GONE : View.VISIBLE);
             }
 
             public void onPageScrollStateChanged(int state) {
@@ -222,17 +215,5 @@ public class MainActivity extends AppCompatActivity{
         }
         super.onRestoreInstanceState(inState);
 
-    }
-
-
-    private void onSkip() {
-
-        Class<Activity> homeScreenActivityClazz = null; // TODO : Refer you home screen activity class here to start that activity on skip button tapped.
-
-        if(homeScreenActivityClazz != null) {
-            Intent intent = new Intent(this, homeScreenActivityClazz);
-            startActivity(intent);
-            finish();
-        }
     }
 }

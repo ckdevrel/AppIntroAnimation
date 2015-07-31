@@ -2,10 +2,6 @@ package com.takeoffandroid.appintroanimation;
 
 import android.graphics.Color;
 
-/**
- * Created by sharish on 02/07/15.
- */
-
 
 /**
  *

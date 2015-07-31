@@ -18,19 +18,6 @@
         android:layout_alignParentBottom="true"
         android:padding="@dimen/padding_normal" />
 
-    <TextView
-        android:id="@+id/skip"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true"
-        android:layout_margin="@dimen/margin_small"
-        android:background="@drawable/round_rectangle_semi_transparent"
-        android:padding="@dimen/padding_normal"
-        android:text="@string/skip"
-        android:textColor="@android:color/black"
-
-        />
 
 
 </RelativeLayout>
