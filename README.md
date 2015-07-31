@@ -13,10 +13,10 @@ Simple BackgroundColor Transformation Animation
 How to use
 ----------
 
- ###STEP 1: 
+ **STEP 1**: 
  
  -Download the code and open `arrays.xml`.
-
+...
 <array name="landing_bg">
     <item>@color/light_green</item>
     <item>@color/light_purple</item>
@@ -44,6 +44,7 @@ How to use
     <item>@string/shopping_hint</item>
     <item>@string/social_network_hint</item>
 </string-array>
+...
 
 Here I have added 4 slides with images, titles and title hints. You can update your png's, text content in above arrays.xml as per your project need and requirement.
 
@@ -51,7 +52,7 @@ Here I have added 4 slides with images, titles and title hints. You can update y
 
 
 
- ###STEP 2: 
+ **STEP 2**:  
  
  -Drop all your images that are to be used for making AppIntro's into drawable folders. To get exact output for multiple resolution and sizes, add scaled images seperately for drawable-xxxhdpi, drawable-xxhdpi, drawable-xhdpi, drawable-hdpi, drawable-mdpi etc., and fix the height and width of ImageView in `viewpager_item.xml`
 
@@ -61,7 +62,7 @@ Customization
 To customize pager attributes like indicator stroke size, stroke color, solid color, solid size, solid color, selected color and unselected color, please open `vpi_defaults.xml` and customize according to your wish.
 
 Following are the attributes that I have used in my project demo, you also customize your own.
-
+...
 <dimen name="default_line_indicator_line_width">12dp</dimen>
 <dimen name="default_line_indicator_gap_width">4dp</dimen>
 <dimen name="default_line_indicator_stroke_width">3dp</dimen>
@@ -88,5 +89,5 @@ Following are the attributes that I have used in my project demo, you also custo
 <integer name="default_underline_indicator_fade_delay">300</integer>
 <integer name="default_underline_indicator_fade_length">400</integer>
 <color name="default_underline_indicator_selected_color">#FF33B5E5</color>
-
+...
 
