@@ -73,14 +73,14 @@ To customize pager attributes like indicator stroke size, stroke color, solid co
 Following are the attributes that I have used in my project demo, you can also customize your own.
 
     <resources>
-        <bool name="default_circle_indicator_centered">true</bool> <!--done-->
-        <color name="default_circle_indicator_fill_color">#FFFFFFFF</color>  <!--done-->
-        <color name="default_circle_indicator_page_color">#40FFFFFF</color>  <!--done-->
-        <integer name="default_circle_indicator_orientation">0</integer> <!--done-->
-        <dimen name="default_circle_indicator_radius">3dp</dimen> <!--done-->
-        <bool name="default_circle_indicator_snap">false</bool>  <!--done-->
-        <color name="default_circle_indicator_stroke_color">#40FFFFFF</color> <!--done-->
-        <dimen name="default_circle_indicator_stroke_width">1dp</dimen> <!--done-->
+        <bool name="default_circle_indicator_centered">true</bool> 
+        <color name="default_circle_indicator_fill_color">#FFFFFFFF</color>  <!--change fill color-->
+        <color name="default_circle_indicator_page_color">#40FFFFFF</color>  <!--change indicator un selected fill color-->
+        <integer name="default_circle_indicator_orientation">0</integer> 
+        <dimen name="default_circle_indicator_radius">3dp</dimen> <!--change radius of the circle-->
+        <bool name="default_circle_indicator_snap">false</bool> 
+        <color name="default_circle_indicator_stroke_color">#40FFFFFF</color> <!--change stroke color-->
+        <dimen name="default_circle_indicator_stroke_width">1dp</dimen> <!--change stroke width-->
     </resources>
 
 
