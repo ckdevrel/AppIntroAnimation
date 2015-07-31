@@ -6,6 +6,8 @@ AppIntroAnimation is a set of code snippets to make cool intro screen for your a
 How to use
 ----------
 
-> **STEP I:** Download the code and open `arrays.xml`.
+> **STEP 1:** Download the code and open `arrays.xml`.
 
-> **STEP 2:** Add the images the images that you.
+> **STEP 2:** Drop all your images that are to be used for making AppIntro's into drawable folders. To get exact output for multiple resolution and sizes, add scaled images seperately for drawable-xxxhdpi, drawable-xxhdpi, drawable-xhdpi, drawable-hdpi, drawable-mdpi,etc.
+
+
