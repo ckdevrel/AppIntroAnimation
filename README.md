@@ -1,11 +1,14 @@
 # AppIntroAnimation
 AppIntroAnimation is a set of code snippets to make cool intro screen for your app with special Image Translation and Transformation animation effects. It is very easy to use and customize without adding third party library integrations.
 
-### ImageTranslation with BackgroundColor Transformation Animation
+**Demo I:**
+
 
 ![appintro1](https://cloud.githubusercontent.com/assets/11768239/9006453/ed88bc78-37a4-11e5-9052-b8bc98678906.gif)
 
-###Simple BackgroundColor Transformation Animation
+
+**Demo II:**
+
 
 ![appintro2](https://cloud.githubusercontent.com/assets/11768239/9006455/f2d9f3a4-37a4-11e5-8e91-092e77ca1da7.gif)
 
