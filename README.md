@@ -1,11 +1,11 @@
 # AppIntroAnimation
 AppIntroAnimation is a set of code snippets to make cool intro screen for your app with special Image Translation and Transformation animation effects. It is very easy to use and customize without adding third party library integrations.
 
-ImageTranslation with BackgroundColor Transformation Animation
+**ImageTranslation with BackgroundColor Transformation Animation**
 
 ![appintro1](https://cloud.githubusercontent.com/assets/11768239/9006453/ed88bc78-37a4-11e5-9052-b8bc98678906.gif)
 
-Simple BackgroundColor Transformation Animation
+**Simple BackgroundColor Transformation Animation**
 
 ![appintro2](https://cloud.githubusercontent.com/assets/11768239/9006455/f2d9f3a4-37a4-11e5-8e91-092e77ca1da7.gif)
 
@@ -55,7 +55,7 @@ Here I have added 4 slides with images, titles and title hints. You can update y
 
  **STEP 2**:  
  
- -Drop all your images that are to be used for making AppIntro's into drawable folders. To get exact output for multiple resolution and sizes, add scaled images seperately for drawable-xxxhdpi, drawable-xxhdpi, drawable-xhdpi, drawable-hdpi, drawable-mdpi etc., and fix the height and width of ImageView in `viewpager_item.xml`
+Drop all your images that are to be used for making AppIntro's into drawable folders. To get exact output for multiple resolution and sizes, add scaled images seperately for drawable-xxxhdpi, drawable-xxhdpi, drawable-xhdpi, drawable-hdpi, drawable-mdpi etc., and fix the height and width of ImageView in `viewpager_item.xml`
 
 Customization
 -------------
