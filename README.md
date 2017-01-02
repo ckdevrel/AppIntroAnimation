@@ -1,6 +1,6 @@
 [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-AppIntroAnimation-brightgreen.svg?style=flat)](http://android-arsenal.com/details/3/2226)
 
-http://ko-fi.com/A302HW7
+<script type='text/javascript' src='https://ko-fi.com/widgets/widget_2.js'></script><script type ='text/javascript'>kofiwidget2.init('Buy Me a Coffee', '#46b798', 'A302HW7');kofiwidget2.draw();</script> 
 
 # AppIntroAnimation
 AppIntroAnimation is a set of code snippets to make cool intro screen for your app with special Image Translation and Transformation animation effects. It is very easy to use and customize without adding third party library integrations.
