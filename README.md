@@ -3,7 +3,7 @@
 <a href='https://ko-fi.com/A302HW7' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://az743702.vo.msecnd.net/cdn/kofi4.png?v=f' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a> 
 
 # AppIntroAnimation
-AppIntroAnimation is a set of code snippets to make cool intro screen for your app with special Image Translation and Transformation animation effects. It is very easy to use and customize without adding third party library integrations.
+AppIntroAnimation is an library to make cool intro screen for your app with special Image Translation and Transformation animation effects. It is very easy to use, highly customizable without adding third party library integrations.
 
  Demo I |      Demo II
 -------- | ---
@@ -51,7 +51,7 @@ How to use
         <item>@string/social_network_hint</item>
     </string-array>
 
-Here I have added 4 slides with images, titles and title hints. You can update your png's, text content in above arrays.xml as per your project need and requirement.
+Here I have added 4 slides with images, titles and title hints as an example. You can update your png's, text content in above arrays.xml as per the project requirement.
 
 
 > **Note:** The array count of images, titles and title hints should be of same count to avoid IndexBoundException.
@@ -60,14 +60,14 @@ Here I have added 4 slides with images, titles and title hints. You can update y
 
  **STEP 2**:  
  
-Drop all your images that are to be used for making AppIntro's into drawable folders. To get exact output for multiple resolution and sizes, add scaled images seperately for drawable-xxxhdpi, drawable-xxhdpi, drawable-xhdpi, drawable-hdpi, drawable-mdpi etc., and fix the height and width of ImageView in `viewpager_item.xml`
+Place all your images that are to be used for making AppIntro's into the app drawable folders. To get exact output for multiple resolution and sizes, add scaled images seperately for drawable-xxxhdpi, drawable-xxhdpi, drawable-xhdpi, drawable-hdpi, drawable-mdpi etc., and fix the height and width of ImageView in `viewpager_item.xml`
 
 Customization
 -------------
 
-To customize pager attributes like indicator stroke size, stroke color, solid color, solid size, solid color, selected color and unselected color, please open `vpi_defaults.xml` and customize according to your wish.
+To customize pager attributes like indicator stroke size, stroke color, solid color, solid size, solid color, selected color and unselected color, please open `vpi_defaults.xml` and customize as per your wish.
 
-Following are the attributes that I have used in my project demo, you can also customize your own.
+Following are the attributes that I have used in the project demo.
 
     <resources>
         <bool name="default_circle_indicator_centered">true</bool> 
@@ -80,7 +80,7 @@ Following are the attributes that I have used in my project demo, you can also c
         <dimen name="default_circle_indicator_stroke_width">1dp</dimen> <!--change stroke width-->
     </resources>
 
-The app which inspired me to create this repos
+The app which inspired me to create these repos
 
 > - Background color transformation animation used in [Google Inbox][1] intro screen.
 > - Image translation animation used in [Duolingo][2] intro screen.
